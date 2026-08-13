@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f2ec;
+  --panel: #ffffff;
+  --text: #242424;
+  --muted: #6f6b64;
+  --border: #ded8cf;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 32px));
+  margin: 32px auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 42px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin: 8px 0 26px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.main-photo {
+  width: min(720px, 100%);
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto 38px;
+  border: 1px solid var(--border);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 24px;
+  background: #fff;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.card p {
+  line-height: 1.65;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 12px;
+}
+
+.set-list {
+  columns: 2;
+  column-gap: 28px;
+}
+
+.set-list p {
+  margin: 0 0 8px;
+  break-inside: avoid;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding-top: 30px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 780px) {
+  .page-shell {
+    width: min(100% - 18px, 1100px);
+    margin: 9px auto;
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .set-list {
+    columns: 1;
+  }
+}
